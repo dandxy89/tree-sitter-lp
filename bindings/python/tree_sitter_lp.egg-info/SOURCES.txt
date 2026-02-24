@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+bindings/python/tree_sitter_lp/__init__.py
+bindings/python/tree_sitter_lp/__init__.pyi
+bindings/python/tree_sitter_lp/binding.c
+bindings/python/tree_sitter_lp/py.typed
+bindings/python/tree_sitter_lp.egg-info/PKG-INFO
+bindings/python/tree_sitter_lp.egg-info/SOURCES.txt
+bindings/python/tree_sitter_lp.egg-info/dependency_links.txt
+bindings/python/tree_sitter_lp.egg-info/not-zip-safe
+bindings/python/tree_sitter_lp.egg-info/requires.txt
+bindings/python/tree_sitter_lp.egg-info/top_level.txt
+src/parser.c

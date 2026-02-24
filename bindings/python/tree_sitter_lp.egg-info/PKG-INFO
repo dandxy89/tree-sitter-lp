@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: tree-sitter-lp
+Version: 0.1.0
+Summary: Tree-sitter grammar for LP (Linear Programming) files
+Author: Dan
+License: MIT
+Project-URL: Homepage, https://github.com/dandxy89/tree-sitter-lp
+Keywords: incremental,parsing,tree-sitter,lp
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Compilers
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: core
+Requires-Dist: tree-sitter~=0.24; extra == "core"
+
+# tree-sitter-lp
+
+A [tree-sitter](https://tree-sitter.github.io/) grammar for LP (Linear Programming) files — the format used by CPLEX, Gurobi, PuLP, and other optimisation solvers.
+
+Provides syntax highlighting, code folding, indentation, and local-variable queries for editors that support tree-sitter.
+
+## Commands
+
+```sh
+npm install              # install dependencies
+npm run build            # generate the parser (tree-sitter generate)
+npm test                 # run the test corpus
+npm run parse -- FILE    # parse a single .lp file
+npm run format           # format grammar.js with prettier
+npm run format:check     # check formatting without writing
+```
+
+## Neovim Setup (Local Development)
+
+Add the following to your Neovim configuration (e.g. `init.lua` or a `ftdetect` file) **before** any `.lp` file triggers tree-sitter:
+
+```lua
+-- Register the lp filetype and tree-sitter language
+vim.filetype.add({ extension = { lp = 'lp' } })
+vim.treesitter.language.register('lp', 'lp')
+
+-- Point nvim-treesitter at the local grammar
+local ok, parsers = pcall(require, 'nvim-treesitter.parsers')
+if ok then
+  parsers.get_parser_configs().lp = {
+    install_info = {
+      url = '/path/to/tree-sitter-lp',
+      files = { 'src/parser.c' },
+      generate_requires_npm = false,
+      requires_generate_from_grammar = false,
+    },
+    filetype = 'lp',
+  }
+end
+```
+
+Then install the parser:
+
+```sh
+:TSInstall lp
+```
+
+Copy the query files into your Neovim runtime so highlights, folds, and indents are picked up:
+
+```sh
+mkdir -p ~/.config/nvim/queries/lp
+cp queries/*.scm ~/.config/nvim/queries/lp/
+```
+
+## LP File Format
+
+An LP file has the following structure:
+
+```
+Minimize
+  obj: x1 + 2 x2 + 3 x3
+
+Subject To
+  c1: x1 + x2 <= 10
+  c2: x2 + x3 >= 5
+
+Bounds
+  0 <= x1 <= 40
+  x2 >= 0
+
+Generals
+  x3
+
+End
+```
+
+## Licence
+
+MIT
