@@ -8,9 +8,9 @@
   (binaries_section)
   (semi_continuous_section)
   (sos_section)
-] @indent
+] @indent.begin
 
 ; Dedent at section boundaries
-(sense) @dedent
+(sense) @indent.branch
 
-(end_marker) @dedent
+(end_marker) @indent.branch
