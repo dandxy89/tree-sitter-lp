@@ -1,0 +1,30 @@
+{
+  "grammars": [
+    {
+      "name": "lp",
+      "camelCase": false,
+      "scope": "source.lp",
+      "path": ".",
+      "file-types": [
+        "lp"
+      ],
+      "highlights": "queries/highlights.scm",
+      "folds": "queries/folds.scm",
+      "indents": "queries/indents.scm",
+      "locals": "queries/locals.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for LP (Linear Programming) files",
+    "authors": [
+      {
+        "name": "Dan"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/dandxy89/tree-sitter-lp"
+    }
+  }
+}

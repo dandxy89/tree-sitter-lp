@@ -1,0 +1,43 @@
+{
+  "name": "tree-sitter-lp",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for LP (Linear Programming) files",
+  "main": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lp",
+    "linear-programming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dandxy89/tree-sitter-lp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "tree-sitter-cli": "^0.26.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse",
+    "format": "prettier --write grammar.js",
+    "format:check": "prettier --check grammar.js"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.lp",
+      "file-types": [
+        "lp"
+      ],
+      "highlights": "queries/highlights.scm",
+      "folds": "queries/folds.scm",
+      "indents": "queries/indents.scm",
+      "locals": "queries/locals.scm"
+    }
+  ]
+}
