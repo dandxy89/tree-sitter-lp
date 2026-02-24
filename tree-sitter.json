@@ -1,16 +1,14 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "lp",
-      "camelCase": false,
       "scope": "source.lp",
       "path": ".",
       "file-types": [
         "lp"
       ],
       "highlights": "queries/highlights.scm",
-      "folds": "queries/folds.scm",
-      "indents": "queries/indents.scm",
       "locals": "queries/locals.scm"
     }
   ],
@@ -26,5 +24,15 @@
     "links": {
       "repository": "https://github.com/dandxy89/tree-sitter-lp"
     }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
   }
 }

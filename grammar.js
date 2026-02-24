@@ -24,7 +24,7 @@ const IDENTIFIER_RE = new RegExp(
   `${ID_FIRST}${ID_CONT}*(-${ID_CONT}${ID_CONT}*)*`,
 );
 
-module.exports = grammar({
+export default grammar({
   name: "lp",
 
   extras: ($) => [/[ \t\r\n]/, $.line_comment, $.block_comment],
