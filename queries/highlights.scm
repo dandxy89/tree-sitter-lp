@@ -1,13 +1,22 @@
 ; Keywords
 (sense) @keyword
+
 (subject_to_keyword) @keyword
+
 (bounds_keyword) @keyword
+
 (generals_keyword) @keyword
+
 (integers_keyword) @keyword
+
 (binaries_keyword) @keyword
+
 (semi_continuous_keyword) @keyword
+
 (sos_keyword) @keyword
+
 (end_marker) @keyword
+
 (free_keyword) @keyword
 
 ; SOS type
@@ -17,17 +26,29 @@
 (comparison_operator) @operator
 
 (linear_expression
-  ["+" "-"] @operator)
+  [
+    "+"
+    "-"
+  ] @operator)
 
 ; Signed numeric values in constraints/bounds
 (constraint
-  ["+" "-"] @operator)
+  [
+    "+"
+    "-"
+  ] @operator)
 
 (bound_declaration
-  ["+" "-"] @operator)
+  [
+    "+"
+    "-"
+  ] @operator)
 
 (sos_entry
-  ["+" "-"] @operator)
+  [
+    "+"
+    "-"
+  ] @operator)
 
 ; Numbers
 (number) @number
@@ -37,7 +58,9 @@
 
 ; Labels / names
 (objective_name) @label
+
 (constraint_name) @label
+
 (sos_name) @label
 
 ; Variables
@@ -64,4 +87,5 @@
 
 ; Comments
 (line_comment) @comment
+
 (block_comment) @comment
