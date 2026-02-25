@@ -5,6 +5,11 @@
 //!
 //! ```
 //! let code = r#"
+//! min
+//!   x
+//! subject to
+//!   x >= 0
+//! end
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_lp::LANGUAGE;
